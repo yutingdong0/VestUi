@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Title: Vest Settings -->
+    <TextView
+        android:id="@+id/vestSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vest Settings"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Bluetooth connection status -->
+    <TextView
+        android:id="@+id/bluetoothStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connected (via. Bluetooth)"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vestSettingsTitle" />
+
+    <!-- Compression Toggle -->
+    <Switch
+        android:id="@+id/compressionToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Compression"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bluetoothStatus" />
+
+    <!-- Automatic Compression Button -->
+    <Button
+        android:id="@+id/automaticCompressionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Automatic"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compressionToggle" />
+
+    <!-- Manual Compression Button -->
+    <Button
+        android:id="@+id/manualCompressionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Adjust Compression Manually"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/automaticCompressionButton" />
+
+    <!-- Compression Level SeekBar -->
+    <SeekBar
+        android:id="@+id/compressionLevelSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:max="10"
+        android:progress="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/manualCompressionButton" />
+
+    <!-- Add other elements below with the same pattern of constraints -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
