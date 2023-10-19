@@ -27,15 +27,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vestSettingsTitle" />
 
-    <!-- Compression Toggle -->
-    <Switch
-        android:id="@+id/compressionToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:text="Compression"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
+    <!-- Compression Button -->
+    <Button
+        android:id="@+id/bluetoothButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Bluetooth Connection"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bluetoothStatus" />
 
     <!-- Automatic Compression Button -->
@@ -47,31 +47,116 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/compressionToggle" />
+        app:layout_constraintTop_toBottomOf="@id/bluetoothButton" />
 
-    <!-- Manual Compression Button -->
-    <Button
-        android:id="@+id/manualCompressionButton"
-        android:layout_width="0dp"
+    <!-- Manual Compression Title -->
+    <TextView
+        android:id="@+id/manualCompressionTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Adjust Compression Manually"
+        android:textSize="18sp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/automaticCompressionButton" />
 
-    <!-- Compression Level SeekBar -->
     <SeekBar
         android:id="@+id/compressionLevelSeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:max="10"
-        android:progress="2"
+        android:max="3"
+        android:progress="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/manualCompressionTitle"/>
+    <TextView
+        android:id="@+id/compressionLevelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compressionLevelSeekBar"
+        android:text="Compression Level: 1"/>
+    <TextView
+        android:id="@+id/emergencyContactsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Contacts"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compressionLevelText"/>
+    <!-- Emergency Contact Section -->
+    <LinearLayout
+        android:id="@+id/emergencyContactSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/manualCompressionButton" />
+        app:layout_constraintTop_toBottomOf="@id/emergencyContactsTitle">
 
-    <!-- Add other elements below with the same pattern of constraints -->
+    <!-- Emergency Contact 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <EditText
+            android:id="@+id/emergencyContact1Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Contact Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/emergencyContact1Number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Contact Number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Emergency Contact 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="8dp">
+
+    <EditText
+        android:id="@+id/emergencyContact2Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Contact Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/emergencyContact2Number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Contact Number"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:padding="8dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
